@@ -1,17 +1,16 @@
-import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import time
 
 
 
 def get_irshad_item():
-    from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
-    import time
 
-    url = 'https://irshad.az/search?q=honor%20x9a'
+    item = input('Enter here')
+
+
+    url = f'https://irshad.az/search?q={item}'
 
     chrome_options = Options()
     chrome_options.add_argument('--headless')
