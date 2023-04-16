@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def get_optimal_item():
-
+    callback = []
     item = input('Enter here:')
     #item = 'samsung'
     headers = {
@@ -19,17 +19,20 @@ def get_optimal_item():
     for i in articles_cards:
         item = i.find('p', class_='price')
         if item.find('span', class_='price-new'):
-            item_cost = item.find('span', class_='price-old').text
-            print(item_cost)
+            item_cost = item.find('span', class_='price-new').text
+
         elif item.text:
-            print(item.text.split()[0])
+            item_cost = item.text.split()[0]
         else:
             continue
 
         name = i.find('div', class_='name').find('a')
         print(name.text)
         print(name.get('href'))
+        print(item_cost)
         print('\n')
+
+        callback.append([name.text, ])
 
 
 get_optimal_item()
