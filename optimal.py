@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def get_item():
+def get_optimal_item():
 
     item = input('Enter here:')
     #item = 'samsung'
@@ -30,11 +30,6 @@ def get_item():
         print(name.text)
         print(name.get('href'))
         print('\n')
-        # parents = i.find_parent().find_parent().find_parent().find('div', class_='name').find('a')
-        # clean = ''.join(parents.text.split('\n'))
-        # print(clean)
-        # print(parents.get('href'))
-        # print('\n')
 
 
-get_item()
+get_optimal_item()

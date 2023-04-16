@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def get_item():
+def get_kontakt_item():
 
     item = input('Enter here:')
 
@@ -27,4 +27,4 @@ def get_item():
 
 
 
-get_item()
+get_kontakt_item()
