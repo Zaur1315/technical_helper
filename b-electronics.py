@@ -19,7 +19,12 @@ def get_be_item():
     for article_card in articles_cards:
         item_name = article_card.find('a', class_='product__title').text
         item_link = article_card.find('a', class_='product__title').get('href')
-        item_price = article_card.find('div', class_='product__price--cur').text
+        price = float(article_card.find('div', class_='product__price--cur').text)
+        if article_card.find('span', class_='product__price--discount-price'):
+            discount = float(article_card.find('span', class_='product__price--discount-price').text)
+            item_price = round((price - discount), 2)
+        else:
+            item_price = price
 
         print(item_name)
         print(item_link)

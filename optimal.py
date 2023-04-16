@@ -18,7 +18,7 @@ def get_optimal_item():
     articles_cards = soup.find_all('div',class_='box-view')
     for i in articles_cards:
         item = i.find('p', class_='price')
-        if item.find('span', class_='price-old'):
+        if item.find('span', class_='price-new'):
             item_cost = item.find('span', class_='price-old').text
             print(item_cost)
         elif item.text:
