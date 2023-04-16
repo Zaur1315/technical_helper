@@ -38,10 +38,21 @@ def get_irshad_item():
         article_name = article.find('a', class_='seg-name').text
         article_link = article.find('a', class_='seg-name').get('href')
         article_price_list = article.find('div', class_='product__price__current')
-        print(article_name)
-        print(article_link)
-        print(article_price_list)
-        print('\n')
+        if article_price_list.find('span', class_='old-price'):
+            article_price = article_price_list.find('span', class_='old-price').text
+            print(article_name)
+            print(article_link)
+            print(article_price)
+            print('\n')
+        elif article_price_list.find('p', class_='new-price'):
+            article_price = article_price_list.find('p', class_='new-price').text
+            print(article_name)
+            print(article_link)
+            print(article_price)
+            print('\n')
+        else:
+            continue
+
 
 
 
